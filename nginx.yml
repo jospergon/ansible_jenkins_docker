@@ -1,0 +1,13 @@
+---
+  - hosts: ciserver
+    sudo: yes
+    roles:
+      - geerlingguy.nginx
+    vars:
+      nginx_remove_default_vhost: true
+      nginx_keepalive_timeout: "300"
+      nginx_keepalive_requests: "300"
+      nginx_vhosts:
+        - listen: '80'
+          server_name: {{ groups['ciserver'][0] }}
+          template: 'vhost_proxy.j2'

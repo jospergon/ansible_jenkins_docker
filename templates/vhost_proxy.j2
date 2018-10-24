@@ -1,0 +1,16 @@
+server {
+    listen 80;
+    server_name {{ item.server_name }};
+    location / {
+        proxy_pass http://localhost:8080/;
+        proxy_set_header  X-Real-IP  $remote_addr;
+        proxy_set_header  Host  $http_host;
+    }
+
+    {% if item.access_log is defined %}
+        access_log {{ item.access_log }};
+    {% endif %}
+    {% if item.error_log is defined %}
+        error_log {{ item.error_log }} error;
+    {% endif %}
+}

@@ -1,0 +1,9 @@
+---
+  - hosts: ciserver
+    sudo: yes
+    roles:
+      - geerlingguy.docker
+    vars:
+      docker_users:
+        - jenkins
+        - ubuntu
