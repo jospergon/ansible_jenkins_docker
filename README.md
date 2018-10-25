@@ -4,7 +4,7 @@ vagrant up
 # run playbook in amazon ec2
 ansible-playbook site.yml -i inventory_file --private-key=~/.ssh/ci-server.pem -u ubuntu
 
-add ciserver group to youe inventory file:
+add ciserver group to your "inventory_file":
 
 [ciserver]
 
