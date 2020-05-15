@@ -1,6 +1,6 @@
 ---
   - hosts: ciserver
-    sudo: yes
+    become: true
     roles:
       - geerlingguy.nginx
     vars:
