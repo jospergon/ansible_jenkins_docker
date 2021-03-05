@@ -14,7 +14,7 @@ jenkins_hostname: localhost
 jenkins_http_port: 8080
 jenkins_jar_location: /opt/jenkins-cli.jar
 jenkins_url_prefix: ""
-jenkins_java_options: "-Djenkins.install.runSetupWizard=false -Dhudson.model.DirectoryBrowserSupport.CSP=\\\"sandbox allow-same-origin allow-scripts; default-src 'self'; script-src * 'unsafe-eval'; img-src *; style-src * 'unsafe-inline'; font-src * data:\\\""
+jenkins_java_options: "-Djenkins.install.runSetupWizard=false -Dhudson.model.DirectoryBrowserSupport.CSP=\\\"sandbox allow-scripts; style-src 'unsafe-inline' *;script-src 'unsafe-inline' *;\\\""
 
 jenkins_plugins: []
 jenkins_plugins_state: present
